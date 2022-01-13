@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{title}}</title>
+		<meta name="description" content="{{description}}">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+		<link rel="stylesheet" href="/styles/fonts/font.css">
+
+		<link href="/styles/site.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="/styles/ecco.css">
+		<meta name="google-site-verification" content="f84V-r9xcHWVFN9eq7flfkiph5-wMPL0OiFqyny_zr4" />
+		<meta name="yandex-verification" content="fc917a6ccabe1180" />
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+		   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		   ym(56895946, "init", {
+		        clickmap:true,
+		        trackLinks:true,
+		        accurateTrackBounce:true
+		   });
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/56895946" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+		<!-- /Yandex.Metrika counter -->
+
+
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
+
+		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8 --}}
+		<!--[if lt IE 9]>
+			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	</head>
+	<body>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index: 9999999999;">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<div class="modal-header" style="background-repeat:no-repeat;background-size:cover; background-position: top;background-image:url(/images/centralbanner.png);">
+		        <h4 style="color: #fff;" class="modal-title" id="myModalLabel">Заказать звонок</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div class="" style="padding: 30px 0;">
+		        	<p style="margin-bottom: 0;font-size: 18px;font-weight: bold;color: #3a1c00;">Спасибо, Ваше сообщение успешно отправлено</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+		  <div class="modal-dialog modal-sm" role="document">
+		    <div class="modal-content">
+					<form id="paymentForm" class="header__banner__form" method="post" style="border: 8px solid #fff;">
+						<input type="hidden" name="action" value="subscriber">
+						<div class="header__banner__form__content">
+							<h3 class="header__banner__form__content__title">Форма обратной связи</h3>
+							<input class="header__banner__form__content__input" type="text" name="name" value="" placeholder="Имя" required>
+							<input class="header__banner__form__content__input" type="text" name="phone" value="" placeholder="Телефон" required>
+							<input class="header__banner__form__content__input" type="text" name="text" value="" placeholder="Сообщение" required>
+							<input class="header__banner__form__content__submit" type="submit" name="" value="Отправить">
+							{{#each information}}
+								<p class="header__banner__form__content__description">{{{textbanner}}}</p>
+							{{/each}}
+						</div>
+					</form>
+		    </div>
+		  </div>
+		</div>
+		<div class="header wow fadeIn">
+			<div class="container">
+				<div class="header__container">
+					<div class="header__first">
+						{{#each information}}
+							<a href="tel:{{phone}}">{{phone}}</a>
+							<a href="mailto:{{email}}">{{email}}</a>
+						{{/each}}
+					</div>
+					<div class="header__last">
+						<form class="header__last__form" action="/search" method="GET">
+							<input class="header__last__form__search" type="text" value="" placeholder="Поиск" id="keywords" name="keywords">
+						</form>
+						<img src="/images/logo.png" alt="" width="0" height="0">
+						<div class="social__header">
+							{{#each information}}
+								{{#if content.vk}}
+									<a href="{{content.vk}}"><img src="/images/vk.png" alt="vk"></a>
+								{{/if}}
+								{{#if content.insta}}
+									<a href="{{content.insta}}"><img src="/images/insta.png" alt="insta"></a>
+								{{/if}}
+								{{#if content.facebook}}
+									<a href="{{content.facebook}}"><img src="/images/facebook.png" alt="facebook"></a>
+								{{/if}}
+								{{#if content.youtube}}
+									<a href="{{content.youtube}}"><img src="https://img.icons8.com/material/26/ffffff/youtube-play--v1.png"></a>
+								{{/if}}
+								{{#if content.ok}}
+									<a href="{{content.ok}}"><img src="https://img.icons8.com/material/25/ffffff/odnoklassniki.png"></a>
+								{{/if}}
+							{{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="header__menu wow fadeIn" data-wow-delay="0.2s">
+			<div class="container header__menu__container">
+				<div class="row header__menu__container">
+					<div class="header__logo">
+						<a href="/"><img src="/images/logo.png" alt="logo"></a>
+					</div>
+					<div class="menu">
+						<ul class="menu__ul">
+							<li class="menu__li"><a class="menu__li__a" href="/company">О компании</a></li>
+							<li class="menu__li"><a class="menu__li__a" href="#">Цены</a>
+								<ul class="menu__ul__price">
+									{{#each price}}
+									<li class="menu__ul__price__li"><a class="menu__ul__price__li__link" href="/price/{{key}}">{{name}}</a></li>
+									{{/each}}
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__li__a" href="#">Услуги</a>
+								<ul class="menu__ul__price">
+									{{#each services}}
+									<li class="menu__ul__price__li"><a class="menu__ul__price__li__link" href="/services/{{key}}">{{name}}</a></li>
+									{{/each}}
+								</ul>
+							</li>
+							<li class="menu__li"><a class="menu__li__a" href="/portfolio">Портфолио</a></li>
+							<li class="menu__li"><a class="menu__li__a" href="/contact">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="request__call">
+						<a class="request__call__link" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Заказать звонок</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile menu -->
+
+		<div class="header__menu__mobile">
+			<div class="header__menu__mobile__item__logo">
+				<div class="header__menu__mobile__logo">
+					<a href="/"><img src="/images/footerlogo.png" alt="logo"></a>
+				</div>
+				<div class="header__menu__mobile__item">
+					<a href="#" class="header__menu__mobile__item__link"><img src="/images/white-menu-icon.png" alt="mobile menu" style="width:28px;"></a>
+				</div>
+			</div>
+			<div class="">
+				<li class="header__menu__mobile__list__li" style="padding: 0 0 10px 0;"><a class="header__menu__mobile__list__li__a" href="/portfolio" style="">Портфолио</a></li>
+				<li class="header__menu__mobile__list__li header__menu__mobile__list__li__price" style="padding: 0 0 10px 0;"><a class="header__menu__mobile__list__li__a" href="#" style="">Цены<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+					<ul class="menu__ul__price__mobile" style="height:380px;">
+						{{#each price}}
+						<li class="menu__ul__price__li__mobile menu__ul__price__li__mobile__fade"><a class="menu__ul__price__li__link__mobile" href="/price/{{key}}">{{name}}</a></li>
+						{{/each}}
+					</ul>
+				</li>
+				<li class="gl__mobile__phone gl__mobile__central">{{#each information}}
+					<a href="tel:{{phone}}"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> {{phone}}</a>
+					{{/each}}
+				</li>
+				<li class="gl__mobile__seti gl__mobile__central">
+					{{#each information}}
+						{{#if content.vk}}
+							<a href="{{content.vk}}" style="margin-right:15px;"><img src="/images/vk.png" alt="vk"></a>
+						{{/if}}
+						{{#if content.insta}}
+							<a href="{{content.insta}}" style="margin-right:15px;"><img src="/images/insta.png" alt="insta"></a>
+						{{/if}}
+						{{#if content.facebook}}
+							<a href="{{content.facebook}}" style="margin-right:15px;"><img src="/images/facebook.png" alt="facebook"></a>
+						{{/if}}
+						{{#if content.youtube}}
+							<a href="{{content.youtube}}" style="margin-right:15px;"><img src="https://img.icons8.com/material/26/ffffff/youtube-play--v1.png"></a>
+						{{/if}}
+						{{#if content.ok}}
+							<a href="{{content.ok}}"><img src="https://img.icons8.com/material/25/ffffff/odnoklassniki.png"></a>
+						{{/if}}
+					{{/each}}
+				</li>
+				<div class="header__menu__mobile__list" style="">
+					<ul class="header__menu__mobile__list__ul header__menu__mobile__list__ul__fade">
+						<li class="header__menu__mobile__list__li"><a class="header__menu__mobile__list__li__a" href="/">Главная</a></li>
+						<li class="header__menu__mobile__list__li"><a class="header__menu__mobile__list__li__a" href="/company">О компании</a></li>
+
+						<li class="header__menu__mobile__list__li header__menu__mobile__list__li__service" style="padding: 0 0 10px 0;"><a class="header__menu__mobile__list__li__a header__menu__mobile__list__li__a__service" href="#" style="">Услуги<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+							<ul class="menu__ul__service__mobile" style="">
+								{{#each services}}
+								<li class="menu__ul__price__li__mobile menu__ul__price__li__mobile__fade"><a class="menu__ul__price__li__link__mobile" href="/services/{{key}}">{{name}}</a></li>
+								{{/each}}
+							</ul>
+						</li>
+						<li class="header__menu__mobile__list__li"><a class="header__menu__mobile__list__li__a" href="/contact">Контакты</a></li>
+						<li class="gl__mobile__phone">{{#each information}}
+							<a href="tel:{{phone}}"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> {{phone}}</a>
+							{{/each}}
+						</li>
+						<li class="gl__mobile__seti">
+							{{#each information}}
+								{{#if content.vk}}
+									<a href="{{content.vk}}" style="margin-right:15px;"><img src="/images/vk.png" alt="vk"></a>
+								{{/if}}
+								{{#if content.insta}}
+									<a href="{{content.insta}}" style="margin-right:15px;"><img src="/images/insta.png" alt="insta"></a>
+								{{/if}}
+								{{#if content.facebook}}
+									<a href="{{content.facebook}}" style="margin-right:15px;"><img src="/images/facebook.png" alt="facebook"></a>
+								{{/if}}
+								{{#if content.youtube}}
+									<a href="{{content.youtube}}" style="margin-right:15px;"><img src="https://img.icons8.com/material/26/ffffff/youtube-play--v1.png"></a>
+								{{/if}}
+								{{#if content.ok}}
+									<a href="{{content.ok}}"><img src="https://img.icons8.com/material/25/ffffff/odnoklassniki.png"></a>
+								{{/if}}
+							{{/each}}
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="body">
+			<!--
+				Flash messages allow you to display once-off status messages to users, e.g. form
+				validation errors, success messages, etc
+			-->
+			{{#if messages}}
+			<div id="flash-messages" class="container">
+				{{#if messages.info}}
+				<div class="alert alert-info">
+						{{{flashMessages messages.info}}}
+				</div>
+				{{/if}}
+				{{#if messages.success}}
+				<div class="alert alert-success">
+						{{{flashMessages messages.success}}}
+				</div>
+				{{/if}}
+				{{#if messages.warning}}
+				<div class="alert alert-warning">
+						{{{flashMessages messages.warning}}}
+				</div>
+				{{/if}}
+				{{#if messages.error}}
+				<div class="alert alert-danger">
+						{{{flashMessages messages.error}}}
+				</div>
+				{{/if}}
+			</div>
+			{{/if}}
+			<!-- The content block should contain the body of your template's content-->
+			{{{body}}}
+		</div>
+		<div class="footer wow fadeIn">
+			<div class="container footer__container">
+				<div class="row footer__row__first">
+					<div class="col-lg-4 footer__row__first__col">
+						<img src="/images/footerlogo.png" alt="footer logo">
+					</div>
+					<div class="col-lg-8 footer__row__first__col">
+						{{#each information}}
+						<p class="footer__row__first__col__text">{{{textfooter}}}</p>
+						{{/each}}
+					</div>
+				</div>
+				<div class="row footer__row__second">
+					<div class="col-lg-6 footer__row__second__col wow fadeIn">
+						<h3 class="footer__row__second__col__title">О компании</h3>
+						{{#each information}}
+						<p class="footer__row__second__col__description">{{{textcompanyfooter}}}</p>
+						{{/each}}
+						<form class="footer__row__second__col__form" action="#" method="post">
+							<input type="hidden" name="action" value="pointment">
+							<input class="footer__row__second__col__form__input" type="text" name="email" value="" placeholder="Ваша почта" required>
+							<input class="footer__row__second__col__form__submit" type="submit" name="" value="">
+						</form>
+					</div>
+					<div class="col-lg-2 footer__row__second__col wow fadeIn" data-wow-delay="0.4s">
+						<h3 class="footer__row__second__col__title">Меню</h3>
+						<ul class="footer__row__second__col__ul">
+							<li class="footer__row__second__col__ul__li"><a class="footer__row__second__col__ul__li__a" href="/company">О компании</a></li>
+							<li class="footer__row__second__col__ul__li"><a class="footer__row__second__col__ul__li__a footer__row__second__col__ul__li__a__prevent" href="#">Цены<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+								<ul class="menu__ul__price menu__ul__price__footer">
+									{{#each price}}
+									<li class="menu__ul__price__li"><a class="menu__ul__price__li__link" href="/price/{{key}}">{{name}}</a></li>
+									{{/each}}
+								</ul>
+							</li>
+							<li class="footer__row__second__col__ul__li"><a class="footer__row__second__col__ul__li__a footer__row__second__col__ul__li__a__prevent" href="#">Услуги<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+								<ul class="menu__ul__price menu__ul__price__footer">
+									{{#each services}}
+									<li class="menu__ul__price__li"><a class="menu__ul__price__li__link" href="/services/{{key}}">{{name}}</a></li>
+									{{/each}}
+								</ul>
+							</li>
+							<li class="footer__row__second__col__ul__li"><a class="footer__row__second__col__ul__li__a" href="/portfolio">Портфолио</a></li>
+							<li class="footer__row__second__col__ul__li"><a class="footer__row__second__col__ul__li__a" href="/contact">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4 footer__row__second__col wow fadeIn" data-wow-delay="0.6s">
+						<h3 class="footer__row__second__col__title">Контакты</h3>
+						{{#each information}}
+						{{#if adress}}
+						<p class="footer__row__second__col__description__news contact__adres">{{adress}}</p>
+						{{/if}}
+						{{#if phonemeneger}}
+						<div class="contact__description__footer">
+							<p class="contact__description__footer__text">менеджер:</p>
+							<a class="contact__description__footer__link" href="tel:{{phonemeneger}}">{{phonemeneger}}</a>
+						</div>
+						{{/if}}
+						{{#if phonefax}}
+						<div class="contact__description__footer">
+							<p class="contact__description__footer__text">тел/факс:</p>
+							<a class="contact__description__footer__link" href="tel:{{phonefax}}">{{phonefax}}</a>
+						</div>
+						{{/if}}
+						{{#if email}}
+						<a class="email__contact__footer" href="mailto:{{email}}">{{email}}</a>
+						{{/if}}
+						<div class="footer__social">
+								{{#if content.vk}}
+									<a class="footer__social__link" href="{{content.vk}}"><img src="/images/vk.png" alt="vk"></a>
+								{{/if}}
+								{{#if content.insta}}
+									<a class="footer__social__link" href="{{content.insta}}"><img src="/images/insta.png" alt="insta"></a>
+								{{/if}}
+								{{#if content.facebook}}
+									<a class="footer__social__link" href="{{content.facebook}}"><img src="/images/facebook.png" alt="facebook"></a>
+								{{/if}}
+								{{#if content.youtube}}
+									<a href="{{content.youtube}}" class="footer__social__link"><img src="https://img.icons8.com/material/26/ffffff/youtube-play--v1.png"></a>
+								{{/if}}
+								{{#if content.ok}}
+									<a href="{{content.ok}}" class="footer__social__link"><img src="https://img.icons8.com/material/25/ffffff/odnoklassniki.png"></a>
+								{{/if}}
+						</div>
+						{{/each}}
+					</div>
+				</div>
+			</div>
+			<div class="footer__row__last">
+				<div class="container footer__row__last__container">
+					<!-- Yandex.Metrika informer -->
+					<!-- <a href="https://metrika.yandex.ru/stat/?id=56895946&amp;from=informer"
+					target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/56895946/3_0_5B3E2EFF_3B1E0EFF_1_pageviews"
+					style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a> -->
+					<!-- /Yandex.Metrika informer -->
+					<p class="footer__row__last__container__copy">&copy; All rights reserved. izbabobra.ru 2022</p>
+					<!-- <p class="footer__row__last__container__copy">Разработка сайта: <a target="_blank" href="https://artbrain.by/">artbrain.by</a></p> -->
+				</div>
+			</div>
+		</div>
+
+		{{!--
+			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
+			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+			//- you can upgrade to 2.1.4 (also bundled) for better performance.
+		--}}
+		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.spincrement.min.js"></script>
+		{{!--
+			//- Customise which Bootstrap javascript files are served by including
+			//- them specifically here, instead of bootstrap-3.3.5.min.js
+		--}}
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+		<script>
+		 new WOW().init();
+		 $(document).ready(function(){
+        $("body").fadeIn();
+    });
+
+		$('.footer__row__second__col__ul__li__a__prevent').click(function(e){
+			e.preventDefault();
+		});
+
+		if (window.location.pathname == '/' || window.location.pathname == '/company') {
+			$(function () {
+			    var jqBar = $('.central__banner__last__container');
+			    var jqBarStatus = true;
+			    $(window).scroll(function() {
+			        var scrollEvent = ($(window).scrollTop() > (jqBar.position().top - $(window).height()));
+			        if (scrollEvent && jqBarStatus) {
+			            jqBarStatus = false;
+									$('.benefits__number').spincrement({
+							        thousandSeparator: "",
+							        duration: 2000
+							    });
+			        }
+			    });
+			});
+		};
+
+		$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+	      event.preventDefault();
+	      $(this).ekkoLightbox();
+	  });
+
+		$('.header__menu__mobile__item__link').click(function(e){
+			e.preventDefault();
+			$('.header__menu__mobile__list__ul').fadeIn(350);
+			$('.header__menu__mobile__list').slideToggle(300);
+			$('.menu__ul__price__mobile').slideUp(300);
+			$('.gl__mobile__central').slideToggle(200);
+
+		});
+
+		$('.primer__slide').slick({
+			dots: true,
+			infinite: false,
+			speed: 500,
+			prevArrow: null,
+    	nextArrow: null,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						prevArrow: null,
+						nextArrow: null,
+					}
+				},
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+							slidesToScroll: 1,
+							prevArrow: null,
+         			nextArrow: null,
+			      }
+			    }
+		    ]
+		});
+
+		$('.clients__row').slick({
+			dots: true,
+			infinite: false,
+			speed: 500,
+			prevArrow: null,
+    	nextArrow: null,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						prevArrow: null,
+						nextArrow: null,
+					}
+				},
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+							slidesToScroll: 1,
+							prevArrow: null,
+         			nextArrow: null,
+			      }
+			    }
+		    ]
+		});
+
+		$('.our__specialists__row__container').slick({
+			dots: true,
+			infinite: false,
+			speed: 500,
+			prevArrow: null,
+    	nextArrow: null,
+			slidesToShow: 4,
+			slidesToScroll: 4,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						prevArrow: null,
+						nextArrow: null,
+					}
+				},
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+							slidesToScroll: 1,
+							prevArrow: null,
+         			nextArrow: null,
+			      }
+			    }
+		    ]
+		});
+
+		$('.partners').slick({
+			dots: false,
+			infinite: true,
+			speed: 500,
+			prevArrow: null,
+    	nextArrow: null,
+			slidesToShow: 7,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			responsive: [
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: 5,
+						slidesToScroll: 5,
+						prevArrow: null,
+						nextArrow: null,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						prevArrow: null,
+						nextArrow: null,
+					}
+				},
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 2,
+							slidesToScroll: 2,
+							prevArrow: null,
+         			nextArrow: null,
+			      }
+			    }
+		    ]
+		});
+
+		$('.index__services__row__items').slick({
+			dots: true,
+			infinite: false,
+			speed: 500,
+			prevArrow: null,
+    	nextArrow: null,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						prevArrow: null,
+						nextArrow: null,
+					}
+				},
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+							slidesToScroll: 1,
+							prevArrow: null,
+         			nextArrow: null,
+			      }
+			    }
+		    ]
+		});
+
+		let trans = true;
+
+		$('.header__menu__mobile__list__li__price').click(function(e){
+			$('.header__menu__mobile__list__li__a > span').toggleClass('transform');
+			$('.menu__ul__price__mobile').slideToggle(300);
+			$('.header__menu__mobile__list').slideUp(300);
+			$('.gl__mobile__central').slideDown(200);
+			$('.menu__ul__price__li__mobile__fade').fadeIn(350);
+		})
+
+
+
+		$('.header__menu__mobile__list__li__service').click(function(e){
+			$('.menu__ul__price__li__mobile__fade').fadeIn(350);
+			$('.menu__ul__service__mobile').slideToggle(300);
+
+
+			$('.header__menu__mobile__list__li__a__service > span').toggleClass('transform');
+		})
+
+		$('#paymentForm').submit(function(){
+			var $this = $(this);
+
+				$.ajax({
+						url: '#',
+						type: 'POST',
+						data: $(this).serialize(),
+	          success: function( response ) {
+								$(".bs-example-modal-sm").modal('hide');
+								$("#myModal").modal('show');
+								setTimeout(function(){
+									$("#myModal").modal('hide');
+								}, 3000);
+	          }
+				});
+
+
+
+			return false; //stop default form submit
+		});
+
+		$('.paymentForm2').submit(function(){
+			var $this = $(this);
+
+				$.ajax({
+						url: '#',
+						type: 'POST',
+						data: $(this).serialize(),
+	          success: function( response ) {
+								$('.paymentForm2')[0].reset();
+								$("#myModal").modal('show');
+								setTimeout(function(){
+									$("#myModal").modal('hide');
+								}, 3000);
+	          }
+				});
+
+
+
+			return false; //stop default form submit
+		});
+
+		$('.footer__row__second__col__form').submit(function(){
+			var $this = $(this);
+
+				$.ajax({
+						url: '#',
+						type: 'POST',
+						data: $(this).serialize(),
+	          success: function( response ) {
+								$('.footer__row__second__col__form')[0].reset();
+								$("#myModal").modal('show');
+								setTimeout(function(){
+									$("#myModal").modal('hide');
+								}, 3000);
+	          }
+				});
+
+
+
+			return false; //stop default form submit
+		});
+
+		{{#if enquirySubmitted2}}
+		$("#myModal").modal('show');
+		setTimeout(function(){
+			$("#myModal").modal('hide');
+		}, 3000);
+		{{/if}}
+
+
+
+		</script>
+		{{{isAdminEditorJS user}}}
+	</body>
+</html>

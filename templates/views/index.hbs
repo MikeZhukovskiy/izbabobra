@@ -1,0 +1,257 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		{{#each bannerindex}}
+    <li data-target="#carousel-example-generic" data-slide-to="{{sort}}" class="{{#ifeq sort '0'}}active{{/ifeq}}"></li>
+		{{/each}}
+  </ol>
+	<div class="header__banner wow fadeIn carousel-inner" data-wow-delay="0.2s">
+		{{#each bannerindex}}
+		<div class="header__banner__slide__container item {{#ifeq sort '0'}}active{{/ifeq}}">
+			<img class="header__banner__slide__img" src="{{cloudinaryUrl heroImage crop='fit' flags='progressive' format='jpeg' quality='50'}}" alt="headerBanner">
+			<div class="container header__banner__content__container">
+				<div class="">
+					<div class="row header__banner__content__container__row">
+						<div class="col-lg-7 header__banner__content animated fadeInLeft">
+							<div class="row header__banner__content__row">
+								<h2 class="header__banner__content__title">{{name}}</h2>
+								<p class="header__banner__content__description">{{content}}</p>
+								{{#if link}}
+								<a class="header__banner__content__link" href="{{link}}">Подробнее</a>
+								{{/if}}
+							</div>
+						</div>
+						<div class="col-lg-5 header__banner__form__container animated fadeInRight">
+							<div class="row header__banner__form__row">
+								<form class="header__banner__form paymentForm2" action="#" method="post">
+									<input type="hidden" name="action" value="subscriber">
+									<div class="header__banner__form__content">
+										<h3 class="header__banner__form__content__title">Форма обратной связи</h3>
+										<input class="header__banner__form__content__input" type="text" name="name" value="" placeholder="Имя" required>
+										<input class="header__banner__form__content__input" type="text" name="phone" value="" placeholder="Телефон" required>
+										<input class="header__banner__form__content__input" type="text" name="text" value="" placeholder="Сообщение" required>
+										<input class="header__banner__form__content__submit" type="submit" name="" value="Отправить">
+										{{#each ../information}}
+											<p class="header__banner__form__content__description">{{{textbanner}}}</p>
+										{{/each}}
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</div>
+	{{#ifeqlength 1 bannerlength}}
+	<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+	{{/ifeqlength}}
+</div>
+
+{{#each reclambanner}}
+<div class="reclam">
+	<div class="container reclam__container">
+		<div class="row reclam__row">
+			{{#if heroImage.secure_url}}
+			<a href="{{link}}" class="reclam__row__container__link">
+				<div class="reclam__row__container" style="background-image:url({{cloudinaryUrl heroImage crop='fit' flags='progressive' format='jpeg'}});">
+					{{#if text}}<p class="reclam__row__container__text">{{text}}</p>{{/if}}
+				</div>
+			</a>
+			{{/if}}
+		</div>
+	</div>
+</div>
+{{/each}}
+
+<div class="company wow fadeIn">
+	<div class="container company__container">
+		{{#each company}}
+		<div class="row company__row">
+			<div class="col-lg-6 company__col">
+				<img class="company__col__img" src="{{cloudinaryUrl heroImage}}" alt="company image">
+			</div>
+
+			<div class="col-lg-6 company__col">
+				<h3 class="company__col__title">{{name}}</h3>
+				<div class="company__col__content">
+					{{{published}}}
+				</div>
+			</div>
+
+		</div>
+		{{/each}}
+	</div>
+</div>
+
+<div class="primer">
+	<div class="container primer__container wow fadeIn">
+		<div class="row primer__container__row">
+			<h3 class="primer__container__row__title">Примеры наших последних работ</h3>
+			{{#each information}}
+			{{#if textprimer}}
+			<p class="primer__container__row__description">{{{textprimer}}}</p>
+			{{/if}}
+			{{/each}}
+		</div>
+
+		<div class="row primer__slide">
+			{{#each portfolio}}
+			<a href="/portfolio/{{key}}" class="primer__slide__link">
+				<div class="primer__slide__item">
+					<div class="primer__slide__item__description">
+						<div class="primer__slide__item__description__content">
+							<h4 class="primer__slide__item__description__content__title">{{name}}</h4>
+							<p class="primer__slide__item__description__content__adres">{{published}}</p>
+						</div>
+						<div class="primer__slide__item__description__price">
+							{{#each ../information}}
+                {{#if rus}}
+      						<h3 class="primer__slide__item__description__price__title">{{../priceru}}</h3>
+                {{else}}
+                  <h3 class="primer__slide__item__description__price__title">{{../priceby}}</h3>
+                {{/if}}
+              {{/each}}
+						</div>
+					</div>
+					<div class="primer__slide__item__foto" style="background-image:url({{cloudinaryUrl image crop='fill' flags='progressive' quality='100' width=450 height=300}});"></div>
+				</div>
+			</a>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+{{#if centralbanner}}
+{{#each centralbanner}}
+<div class="central__banner">
+	<div class="container central__banner__container">
+		<h2 class="central__banner__title wow fadeInLeft">{{content}}</h2>
+	</div>
+</div>
+{{/each}}
+{{/if}}
+
+<div class="index__services">
+	<div class="container index__services__container  wow fadeIn">
+		<div class="row index__services__row">
+			<h3 class="primer__container__row__title">Основные услуги</h3>
+      {{#each information}}
+  			{{#if textservice}}
+  			   <p class="primer__container__row__description">{{{textservice}}}</p>
+  			{{/if}}
+			{{/each}}
+		</div>
+		<div class="row index__services__row__items wow fadeInUp">
+      {{#each services}}
+			<a class="index__services__item__link" href="/services/{{key}}">
+				<div class="index__services__item">
+  				<div class="primer__slide__item__description">
+  					<div class="primer__slide__item__description__content">
+  						<h4 class="primer__slide__item__description__content__title">{{name}}</h4>
+  						<p class="primer__slide__item__description__content__adres">{{published}}</p>
+  					</div>
+  					<div class="primer__slide__item__description__price">
+              {{#each ../information}}
+                {{#if rus}}
+      						<h3 class="primer__slide__item__description__price__title">{{../priceru}}</h3>
+                {{else}}
+                  <h3 class="primer__slide__item__description__price__title">{{../priceby}}</h3>
+                {{/if}}
+              {{/each}}
+  					</div>
+  				</div>
+  				<div class="primer__slide__item__foto" style="background-image:url({{cloudinaryUrl heroImage crop='fill' flags='progressive' quality='100' width=371}});"></div>
+  			</div>
+			</a>
+
+      {{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="central__banner">
+	<div class="container central__banner__container">
+		<div class="central__banner__last__container">
+			{{#each company}}
+			<div class="central__banner__last__container__item wow fadeIn">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon1.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number">{{{house}}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text">Построенных дома</p>
+				</div>
+			</div>
+			<div class="central__banner__last__container__item wow fadeIn" data-wow-delay="0.2s">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon2.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number">{{remont}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text">Законченных ремонтов</p>
+				</div>
+			</div>
+			<div class="central__banner__last__container__item wow fadeIn" data-wow-delay="0.3s">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon3.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number">{{client}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text">Счастливых клиентов</p>
+				</div>
+			</div>
+			{{#if result}}
+			<div class="central__banner__last__container__item wow fadeIn" data-wow-delay="0.4s">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon4.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number">{{result}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text">Награды</p>
+				</div>
+			</div>
+			{{/if}}
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="clients">
+	<div class="container clients__container wow fadeIn">
+		<div class="row clients__row__title">
+			<h3 class="primer__container__row__title">Счастливые клиенты</h3>
+			{{#each information}}
+			{{#if textclient}}
+			<p class="primer__container__row__description">{{{textclient}}}</p>
+			{{/if}}
+			{{/each}}
+		</div>
+		<div class="clients__row wow fadeInUp">
+      {{#each rewiev}}
+			<div class="clients__col">
+				<div class="clients__col__foto">
+					<div class="clients__col__foto__image" style="background-image:url({{cloudinaryUrl heroImage crop='fill' flags='progressive' quality='100' width=120}});"></div>
+				</div>
+				<div class="clients__col__context">
+					<p class="clients__col__context__text">{{content}}</p>
+					<h4 class="clients__col__context__text__name">{{name}}</h4>
+				</div>
+			</div>
+      {{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="partners wow fadeIn">
+  {{#each portners}}
+	 <a class="partners__link" target="_blank" href="{{link}}"><img class="partners__img" src="{{cloudinaryUrl heroImage crop='fill' flags='progressive' quality='100' width=200}}" alt="{{name}}"></a>
+  {{/each}}
+</div>

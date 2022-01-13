@@ -1,0 +1,184 @@
+<div class="company__page wow fadeIn">
+  <div class="container company__page__container">
+    <h1>О компании</h1>
+  </div>
+</div>
+
+<div class="company wow fadeIn">
+	<div class="container company__container">
+    {{#each company}}
+		<div class="row company__row">
+			<div class="col-lg-6 company__col">
+				<img class="company__col__img" src="{{cloudinaryUrl heroImage}}" alt="company image">
+			</div>
+
+			<div class="col-lg-6 company__col">
+				<h3 class="company__col__title">{{name}}</h3>
+				<div class="company__col__content">
+					{{{published}}}
+				</div>
+			</div>
+
+		</div>
+    {{/each}}
+	</div>
+</div>
+
+<div class="central__banner" style="background:none;">
+	<div class="container central__banner__container">
+		<div class="central__banner__last__container">
+      {{#each company}}
+			<div class="central__banner__last__container__item wow fadeIn">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon1.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number" style="color:#000;">{{{house}}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text" style="color:#000;">Построенных дома</p>
+				</div>
+			</div>
+			<div class="central__banner__last__container__item wow fadeIn" data-wow-delay="0.2s">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon2.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number" style="color:#000;">{{remont}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text" style="color:#000;">Законченных ремонтов</p>
+				</div>
+			</div>
+			<div class="central__banner__last__container__item wow fadeIn" data-wow-delay="0.3s">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon3.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number" style="color:#000;">{{client}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text" style="color:#000;">Счастливых клиентов</p>
+				</div>
+			</div>
+      {{#if result}}
+			<div class="central__banner__last__container__item wow fadeIn" data-wow-delay="0.4s">
+				<div class="central__banner__last__container__icon">
+					<img class="central__banner__last__container__icon__img" src="/images/icon4.png" alt="icon">
+					<p class="central__banner__last__container__icon__number benefits__number" style="color:#000;">{{result}}</p>
+				</div>
+				<div class="central__banner__last__container__descript">
+					<p class="central__banner__last__container__descript__text" style="color:#000;">Награды</p>
+				</div>
+			</div>
+      {{/if}}
+      {{/each}}
+		</div>
+	</div>
+</div>
+
+{{#if centralbanner}}
+{{#each centralbanner}}
+<div class="central__banner">
+	<div class="container central__banner__container">
+		<h2 class="central__banner__title wow fadeInLeft">{{content}}</h2>
+	</div>
+</div>
+{{/each}}
+{{/if}}
+
+<div class="work">
+  <div class="container work__container">
+    <div class="row work__row">
+      <div class="col-lg-8">
+        <div class="work__row__title">
+          <h2 class="work__row__title__h2">Что мы делаем</h2>
+          {{#each information}}
+          <p class="work__row__title__text">{{{textwork}}}</p>
+          {{/each}}
+        </div>
+        <div class="work__row__content">
+          {{#each company}}
+            {{{imagework.imagework}}}
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-lg-4 work__row__image">
+        {{#each company}}
+        {{#if imagework.imageworkfoto}}
+        <img class="work__row__image__foto" src="{{cloudinaryUrl imagework.imageworkfoto}}" alt="work image">
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="our__specialists">
+  <div class="container our__specialists__container wow fadeIn">
+    <div class="row our__specialists__row">
+      <h3 class="primer__container__row__title">Наши специалисты</h3>
+      {{#each information}}
+			<p class="primer__container__row__description">{{{textspec}}}</p>
+      {{/each}}
+    </div>
+    <div class="our__specialists__row__container">
+      {{#each specialist}}
+        <div class="our__specialists__col" style="display:flex;">
+          <div class="our__specialists__col__foto" style="background-image:url({{cloudinaryUrl heroImage}});"></div>
+          <div class="our__specialists__col__text">
+            <h3 class="our__specialists__col__title">{{name}}</h3>
+            <p class="our__specialists__col__text__specialization">{{link}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<div class="clients">
+	<div class="container clients__container wow fadeIn">
+		<div class="row clients__row__title">
+			<h3 class="primer__container__row__title">Счастливые клиенты</h3>
+			{{#each information}}
+			{{#if textclient}}
+			<p class="primer__container__row__description">{{{textclient}}}</p>
+			{{/if}}
+			{{/each}}
+		</div>
+		<div class="clients__row wow fadeInUp">
+      {{#each rewiev}}
+			<div class="clients__col">
+				<div class="clients__col__foto">
+					<div class="clients__col__foto__image" style="background-image:url({{cloudinaryUrl heroImage}});"></div>
+				</div>
+				<div class="clients__col__context">
+					<p class="clients__col__context__text">{{content}}</p>
+					<h4 class="clients__col__context__text__name">{{name}}</h4>
+				</div>
+			</div>
+      {{/each}}
+		</div>
+	</div>
+</div>
+
+{{#if sertificat}}
+<div class="our__specialists">
+  <div class="container our__specialists__container wow fadeIn">
+    <div class="row our__specialists__row">
+      <h3 class="primer__container__row__title">Сертификаты</h3>
+      {{#each information}}
+			<p class="primer__container__row__description">{{{textsertificat}}}</p>
+      {{/each}}
+    </div>
+    <div class="our__specialists__row__container">
+      {{#each sertificat}}
+        <div class="our__specialists__col" style="display:flex;">
+          <a href="{{cloudinaryUrl heroImage crop='fill' flags='progressive' quality='90' width=1000}}" data-toggle="lightbox" data-gallery="example-gallery" data-type="image" class="our__specialists__col__foto__link"><div class="our__specialists__col__foto" style="background-image:url({{cloudinaryUrl heroImage crop='fill' flags='progressive' quality='60'}});"></div></a>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+{{/if}}
+
+<div class="partners wow fadeIn" style="background:#fff;">
+  {{#each portners}}
+	 <a target="_blank" class="partners__link" href="{{link}}"><img class="partners__img" src="{{cloudinaryUrl heroImage}}" alt="{{name}}"></a>
+  {{/each}}
+</div>

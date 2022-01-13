@@ -1,0 +1,66 @@
+<div class="company__page wow fadeIn">
+  <div class="container company__page__container">
+    <h1>Контакты</h1>
+  </div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 contact__col">
+      {{#each information}}
+			<!-- <div class="contact__col__cart wow fadeIn">
+				{{{cart}}}
+			</div> -->
+
+			<div class="contact__col__banner wow fadeInLeft">
+				<div class="contact__col__banner__inner">
+					<!-- <div class="contact__col__banner__inner__col">
+						<img src="/images/map.png" alt="map">
+						<div class="contact__col__banner__inner__col__text">
+							<p>{{adress}}</p>
+						</div>
+					</div> -->
+					<div class="contact__col__banner__inner__col">
+						<img src="/images/telefon.png" alt="telefon">
+						<div class="contact__col__banner__inner__col__text">
+              {{#if phonemeneger}}
+							<p>менеджер: {{phonemeneger}}</p>
+              {{/if}}
+              {{#if phonefax}}
+							<p>тел./факс: {{phonefax}}</p>
+              {{/if}}
+						</div>
+					</div>
+					<div class="contact__col__banner__inner__col">
+						<img src="/images/mail.png" alt="mail">
+						<div class="contact__col__banner__inner__col__text">
+							<p>{{email}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+      {{/each}}
+			{{#if enquirySubmitted}}
+			<h3 class="enquirySubmitted">Спасибо, Ваше сообщение успешно отправлено.</h3>
+			{{else}}
+
+			<form class="contact__form wow fadeIn" method="post">
+				<h2 class="contact__form__title">Написать нам</h2>
+				<input type="hidden" name="action" value="contact">
+				<div class="form-group {{#if validationErrors.tel}}has-error{{/if}}">
+					<input type="text" name="tel"  class="form-control" value="{{formData.tel}}" placeholder="Имя" required>
+				</div>
+				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+					<input type="email" name="email" class="form-control" value="{{formData.email}}" placeholder="Почта" required>
+				</div>
+				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+					<textarea name="message" placeholder="Сообщение..." rows="4" class="form-control" required>{{formData.message}}</textarea>
+				</div>
+				<div class="form-actions">
+					<button type="submit" class="contact__form__submit">Отправить</button>
+				</div>
+			</form>
+			{{/if}}
+		</div>
+	</div>
+</div>

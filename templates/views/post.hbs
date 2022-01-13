@@ -1,0 +1,63 @@
+<div class="company__page wow fadeIn">
+  <div class="container company__page__container">
+    <div class="row company__page__container">
+      <h1><a href="/portfolio">Портфолио</a></h1>
+    </div>
+  </div>
+</div>
+<div class="" style="background-image:url({{{cloudinaryUrl data.post.image flags='progressive' quality='40' crop='fill' effect="sepia:80" opacity="15" width=2500}}});background-repeat: no-repeat;background-size: cover;background-position: center;background-attachment: fixed;">
+  <div class="container post__container wow fadeIn" style="margin-top:0;margin-bottom:0;padding: 65px 0 30px 0;">
+  	<div class="">
+  		<div class="col-sm-8">
+  			<article>
+  				<div class="post">
+  					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image flags='progressive' quality='90' crop='fill' width=770}}}" class="img-responsive post__image">{{/if}}
+  					<div class="post__content">
+  						{{{data.post.content.extended}}}
+  					</div>
+
+  				</div>
+  			</article>
+  		</div>
+  		<div class="col-sm-4">
+  			<div class="other__post__image">
+  				{{#each data.post.images}}
+  				<a href="{{cloudinaryUrl crop='fill' flags='progressive' quality='90' width=1000}}" data-toggle="lightbox" data-gallery="example-gallery" data-type="image"><div class="other__post__image__item" style="background-image:url({{cloudinaryUrl crop='fill' flags='progressive' quality='60' width=400}});"></div></a>
+  				{{/each}}
+  			</div>
+  			<div class="other__post__information">
+          {{#each information}}
+            {{#if rus}}
+              {{#if ../data.post.information2}}
+        				<h3 class="other__post__information__title">Информация</h3>
+        				<div class="other__post__information__title__line"></div>
+        				{{{../data.post.information2}}}
+              {{/if}}
+            {{else}}
+              {{#if ../data.post.information}}
+                <h3 class="other__post__information__title">Информация</h3>
+                <div class="other__post__information__title__line"></div>
+                {{{../data.post.information}}}
+              {{/if}}
+            {{/if}}
+          {{/each}}
+  				<a class="other__post__information__link" href="#" data-toggle="modal" data-target=".bs-example-modal-sm">Заказать ремонт</a>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+</div>
+<script type="text/javascript">
+  let other__post__image__item = document.querySelectorAll('.other__post__image__item');
+  let other__post__image = document.querySelector('.other__post__image');
+
+  if (other__post__image__item) {
+
+    if (13 <= other__post__image__item.length) {
+      other__post__image.style.height = '1430px';
+    } else {
+      other__post__image.style.height = 'auto';
+    }
+
+  }
+</script>

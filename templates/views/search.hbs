@@ -1,0 +1,18 @@
+<div class="search">
+  <div class="container">
+    <div class="row search__row">
+      <h3 class="footer__row__second__col__title" style="color:#000;font-size:30px;">Результаты поиска</h3>
+      {{#if data.posts}}
+      {{#each data.posts}}
+        <div class="footer__row__second__col__search__results">
+          <a href="/price/{{key}}">{{name}}</a>
+        </div>
+      {{/each}}
+      {{else}}
+      <div class="footer__row__second__col__search__results">
+        <p>К сожалению по данному запросу ничего не найдено.</p>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+</div>

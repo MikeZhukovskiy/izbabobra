@@ -1,0 +1,19 @@
+<h1>Сообщение с сайта - izbabobra.com</h1>
+
+{{#if enquiry.email}}
+	<p class="text-larger">От
+	{{#if enquiry.name.full}}
+		<strong>{{enquiry.name.full}}</strong>
+	{{/if}}
+
+	{{#if enquiry.email}}
+		(<a href="mailto:{{enquiry.email}}">{{enquiry.email}}</a>)
+	{{/if}}
+	</p>
+
+	{{#if enquiry.message}}
+		<p><b>Сообщение:</b> {{{enquiry.message.html}}}</p>
+	{{/if}}
+
+	<p class="text-muted">Отправлено {{underscoreFormat enquiry 'createdAt'}}</p>
+{{/if}}

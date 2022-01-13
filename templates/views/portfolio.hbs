@@ -1,0 +1,28 @@
+<div class="company__page wow fadeIn">
+  <div class="container company__page__container">
+    <div class="row company__page__container">
+      <h1>Портфолио</h1>
+    </div>
+  </div>
+</div>
+
+<div class="our__works wow fadeIn">
+  <div class="our__works__container container">
+    <div class="row our__works__row">
+      <h3 class="primer__container__row__title">Наши работы</h3>
+			<p class="primer__container__row__description">В портфолио вы можите подробно ознакомится с нашими работами. Подробное описание вы сможите найти перейдя по одной из карточек.</p>
+    </div>
+    <div class="our__works__row__items">
+      {{#each portfolio}}
+      <a class="our__works__row__items__link" href="/portfolio/{{key}}">
+        <div class="our__works__row__item" style="background-image:url({{cloudinaryUrl image crop='fill' flags='progressive' quality='100' width=375 height=300}});">
+          <div class="our__works__row__item__description">
+            <h3 class="our__works__row__item__description__title">{{name}}</h3>
+            <div class="our__works__row__item__description__text">{{{content.brief}}}</div>
+          </div>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</div>

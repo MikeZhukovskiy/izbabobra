@@ -1,0 +1,67 @@
+<div class="company__page wow fadeIn">
+  <div class="container company__page__container">
+    <h1>Цены</h1>
+  </div>
+</div>
+
+<div class="price wow fadeIn">
+  <div class="container price__container">
+    <div class="row price__row">
+      <div class="price__title__container">
+        <h2 class="price__title">{{data.post.name}}</h2>
+        <p class="price__title__text">{{data.post.textfooter}}</p>
+      </div>
+      <div class="table__price wow fadeIn">
+        {{#each information}}
+          {{#if rus}}
+            {{{../data.post.publishedru}}}
+          {{else}}
+            {{{../data.post.published}}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#if centralbanner}}
+{{#each centralbanner}}
+<div class="central__banner">
+	<div class="container central__banner__container">
+		<h2 class="central__banner__title wow fadeInLeft">{{content}}</h2>
+	</div>
+</div>
+{{/each}}
+{{/if}}
+
+<div class="clients">
+	<div class="container clients__container wow fadeIn">
+		<div class="row clients__row__title">
+			<h3 class="primer__container__row__title">Счастливые клиенты</h3>
+			{{#each information}}
+			{{#if textclient}}
+			<p class="primer__container__row__description">{{{textclient}}}</p>
+			{{/if}}
+			{{/each}}
+		</div>
+		<div class="clients__row wow fadeInUp">
+      {{#each rewiev}}
+			<div class="clients__col">
+				<div class="clients__col__foto">
+					<div class="clients__col__foto__image" style="background-image:url({{cloudinaryUrl heroImage}});"></div>
+				</div>
+				<div class="clients__col__context">
+					<p class="clients__col__context__text">{{content}}</p>
+					<h4 class="clients__col__context__text__name">{{name}}</h4>
+				</div>
+			</div>
+      {{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="partners wow fadeIn">
+  {{#each portners}}
+	 <a target="_blank" class="partners__link" href="{{link}}"><img class="partners__img" src="{{cloudinaryUrl heroImage}}" alt="{{name}}"></a>
+  {{/each}}
+</div>
