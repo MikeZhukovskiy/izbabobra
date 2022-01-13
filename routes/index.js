@@ -35,29 +35,29 @@ var routes = {
 };
 
 const sitemap = sm.createSitemap ({
-  hostname: 'https://izbabobra.com',
+  hostname: 'https://izbabobra.ru',
   cacheTime: 600000,        // 600 sec - cache purge period
   urls: [
-    { url: 'https://izbabobra.com', img: "https://izbabobra.com/images/logo.png", changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/company', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/shlifovka-srubov', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/otdelka-sten-v-srubakh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/otdelke-potolkov-v-srubakh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/otdelka-polov-v-srubakh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/otdelka-proemov-ustanovka-okon-i-dverei', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/elektromontazhnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/krovelnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/price/dopolnitelnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/services/shlifovka-srubov', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/services/parnye-pod-klyuch', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/services/otdelochnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/services/krovelnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/services/elektromontazh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/portfolio', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/contact', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/portfolio/family-park-dom-iz-kleenogo-prof-brusa', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/portfolio/parnaya-family-park', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
-		{ url: 'https://izbabobra.com/portfolio/zheleznyi-vagona-stilnyi-khozblok', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0}
+    { url: 'https://izbabobra.ru', img: "https://izbabobra.com/images/logo.png", changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/company', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/shlifovka-srubov', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/otdelka-sten-v-srubakh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/otdelke-potolkov-v-srubakh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/otdelka-polov-v-srubakh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/otdelka-proemov-ustanovka-okon-i-dverei', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/elektromontazhnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/krovelnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/price/dopolnitelnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/services/shlifovka-srubov', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/services/parnye-pod-klyuch', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/services/otdelochnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/services/krovelnye-raboty', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/services/elektromontazh', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/portfolio', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/contact', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/portfolio/family-park-dom-iz-kleenogo-prof-brusa', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/portfolio/parnaya-family-park', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0},
+		{ url: 'https://izbabobra.ru/portfolio/zheleznyi-vagona-stilnyi-khozblok', changefreq: 'hourly', lastmodISO: moment().format('YYYY-MM-DD'), priority: 1.0}
   ]
 });
 
@@ -67,7 +67,7 @@ exports = module.exports = function (app) {
 	app.use(secure);
 	app.get('/robots.txt', function (req, res) {
 	    res.type('text/plain');
-	    res.send("User-agent: *\nDisallow: /keystone/\nCrawl-delay: 3\nSitemap: https://izbabobra.com/sitemap.xml");
+	    res.send("User-agent: *\nDisallow: /keystone/\nCrawl-delay: 3\nSitemap: https://izbabobra.ru/sitemap.xml");
 	});
 	app.get('/sitemap.xml', function(req, res) {
   	sitemap.toXML( function (err, xml) {
